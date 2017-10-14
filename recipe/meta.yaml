@@ -1,6 +1,6 @@
 {% set name = "clickhouse-cityhash" %}
-{% set version = "1.0.2" %}
-{% set sha256 = "d68f37727f165592f175d87ae38ec5cd5ef93e5c8b0ab70073cae45d185cd2fc" %}
+{% set version = "1.0.2.1" %}
+{% set sha256 = "6e014ae2fc598b11ede1e27c2192a7b612ed9f504dc905b48597abf9b97e3b63" %}
 
 package:
   name: {{ name|lower }}
@@ -27,7 +27,7 @@ requirements:
 
 test:
   imports:
-    - clickhouse_driver.util.cityhash
+    - clickhouse_cityhash
 
 about:
   home: https://github.com/xzkostyan/python-cityhash
