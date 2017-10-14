@@ -27,7 +27,7 @@ requirements:
 
 test:
   imports:
-    - clickhouse_driver.util.cityhash
+    - clickhouse_cityhash
 
 about:
   home: https://github.com/xzkostyan/python-cityhash
