@@ -1,6 +1,6 @@
 {% set name = "clickhouse-cityhash" %}
-{% set version = "1.0.2.2" %}
-{% set sha256 = "6ec5e3ce721edafc2f606097d246091a9b5f863ee4df83cb180314b928d67baa" %}
+{% set version = "1.0.2.3" %}
+{% set sha256 = "2f377d20796c6fe4bc1c5b4e07082782788401f14677febc35305ce129a0167d" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   skip: True  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
