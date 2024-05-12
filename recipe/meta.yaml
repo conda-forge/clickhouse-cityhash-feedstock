@@ -1,6 +1,6 @@
 {% set name = "clickhouse-cityhash" %}
-{% set version = "1.0.2.3" %}
-{% set sha256 = "2f377d20796c6fe4bc1c5b4e07082782788401f14677febc35305ce129a0167d" %}
+{% set version = "1.0.2.4" %}
+{% set sha256 = "7b3125d7d0aa13c2cc4e7583a965a6bfb0aa96a12131475b442552bacb55f4f8" %}
 
 package:
   name: {{ name|lower }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
-  skip: True  # [win]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  skip: true  # [win]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   build:
@@ -33,7 +33,7 @@ test:
 
 about:
   home: https://github.com/xzkostyan/python-cityhash
-  summary: 'Python-bindings for CityHash, a fast non-cryptographic hash algorithm'
+  summary: Python-bindings for CityHash, a fast non-cryptographic hash algorithm
   license: MIT
   license_file: LICENSE
   license_family: MIT
