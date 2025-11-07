@@ -1,6 +1,6 @@
 {% set name = "clickhouse-cityhash" %}
-{% set version = "1.0.2.3" %}
-{% set sha256 = "2f377d20796c6fe4bc1c5b4e07082782788401f14677febc35305ce129a0167d" %}
+{% set version = "1.0.2.5" %}
+{% set sha256 = "4f98ef81b21f0d4dad58247bea40bafc098cf6ffa0ede699882d4a42eac3ed79" %}
 
 package:
   name: {{ name|lower }}
@@ -8,17 +8,18 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 4
-  skip: True  # [win]
+  number: 0
+  skip: true  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - pip
